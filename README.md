@@ -1,34 +1,26 @@
 # AREKOS UI
 
-A Claude Code skill that transforms Claude into an elite UI architect.
+A Claude Code plugin that transforms Claude into an elite UI architect.
 
 AREKOS UI is not a component library or a design system — it's a **standard of quality**. When invoked, Claude adopts the AREKOS persona: it reads your existing codebase, adapts to your design language, and produces complete, polished, production-ready interfaces at the level of Linear, Vercel, and Stripe.
 
 ## Installation
 
+Install the plugin globally (works across all projects):
+
+```
+/install-plugin https://github.com/zwverybool/arekos-ui
+```
+
+That's it. `/arekos-ui` is now available in every project.
+
+### Alternative: Per-project install
+
+If you prefer to scope it to a single project:
+
 ```bash
 mkdir -p .claude/skills
 git clone https://github.com/zwverybool/arekos-ui.git .claude/skills/arekos-ui
-```
-
-Your project should look like:
-
-```
-your-project/
-├── .claude/
-│   └── skills/
-│       └── arekos-ui/
-│           ├── SKILL.md
-│           ├── principles.md
-│           ├── anti-patterns.md
-│           ├── agents/
-│           │   └── arekos-reviewer.md
-│           └── references/
-│               ├── discovery-checklist.md
-│               ├── component-patterns.md
-│               └── accessibility.md
-├── src/
-└── ...
 ```
 
 ## Usage
@@ -59,15 +51,22 @@ AREKOS follows a 4-phase workflow for every task:
 
 ## What's Inside
 
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | Core identity, 4-phase workflow, output rules |
-| `principles.md` | 10 design principles — hierarchy, states, motion, typography, forms, craft |
-| `anti-patterns.md` | Forbidden patterns — generic AI slop that AREKOS will never produce |
-| `agents/arekos-reviewer.md` | Auditor subagent — reviews output against all quality standards |
-| `references/discovery-checklist.md` | What to read in a codebase before writing any UI |
-| `references/component-patterns.md` | Quality checklists for buttons, cards, forms, tables, modals, nav, states |
-| `references/accessibility.md` | Non-negotiable a11y standards — ARIA, keyboard, contrast, focus, screen readers |
+```
+arekos-ui/
+├── .claude-plugin/
+│   └── plugin.json                     # Plugin metadata
+├── skills/
+│   └── arekos-ui/
+│       ├── SKILL.md                    # Core identity + 4-phase workflow
+│       ├── principles.md              # 10 design principles
+│       ├── anti-patterns.md           # Forbidden AI slop patterns
+│       └── references/
+│           ├── discovery-checklist.md  # Codebase reading checklist
+│           ├── component-patterns.md  # Quality standards per component type
+│           └── accessibility.md       # Non-negotiable a11y standards
+└── agents/
+    └── arekos-reviewer.md             # Self-auditing subagent
+```
 
 ## What Makes AREKOS Different
 

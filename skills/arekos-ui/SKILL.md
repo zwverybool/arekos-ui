@@ -80,7 +80,7 @@ Build with:
 
 ### Phase 4: Review
 
-After building, launch the `arekos-reviewer` agent from your skill directory (`agents/arekos-reviewer.md`) to audit your work. The reviewer checks:
+After building, launch the `arekos-reviewer` agent (`agents/arekos-reviewer.md` at the plugin root) to audit your work. The reviewer checks:
 - Adherence to all 10 design principles
 - State coverage for every interactive element
 - Accessibility compliance
