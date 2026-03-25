@@ -1,37 +1,16 @@
 # AREKOS UI
 
-A Claude Code skill that transforms Claude into a specialized UI architect with its own design language.
+A Claude Code skill that transforms Claude into an elite UI architect.
 
-AREKOS UI is not a component library — it's a **design identity**. When invoked, Claude adopts the AREKOS persona and builds interfaces using the **Warm Obsidian** design system: warm blacks, burnt amber accents, sharp edges, asymmetric layouts, and weight-based motion.
-
-Every output is designed to be unmistakably distinct from generic AI-generated UI.
-
-## Design Language: Warm Obsidian
-
-| Element | Approach |
-|---------|----------|
-| **Color** | Warm blacks (`#0d0b0a`), burnt amber (`#c2703e`), oxidized copper (`#8b6c4f`), muted sage (`#7a8c6e`) |
-| **Shape** | Sharp. Max border-radius: `4px`. No rounded corners. |
-| **Layout** | Asymmetric, left-heavy, editorial. CSS Grid with deliberate negative space. |
-| **Surface** | Solid backgrounds. Cards use 3px left accent bars, not full borders. No glassmorphism. |
-| **Motion** | Objects have weight. `cubic-bezier(0.16, 1, 0.3, 1)`. 120ms micro, 200ms max. |
-| **Type** | Geist Sans. Three weights: 400, 500, 700. Overline captions at 11px uppercase. |
+AREKOS UI is not a component library or a design system — it's a **standard of quality**. When invoked, Claude adopts the AREKOS persona and builds interfaces at the level of Linear, Vercel, Stripe, and Raycast. It reads your existing codebase, adapts to your design language, and produces complete, polished, production-ready UI.
 
 ## Installation
 
-Copy this folder into your project's `.claude/skills/` directory:
-
-```bash
-# From your project root
-mkdir -p .claude/skills
-cp -r /path/to/arekos-ui .claude/skills/arekos-ui
-```
-
-Or clone directly:
+Clone into your project's `.claude/skills/` directory:
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/zainwaraich/arekos-ui.git .claude/skills/arekos-ui
+git clone https://github.com/zwverybool/arekos-ui.git .claude/skills/arekos-ui
 ```
 
 Your project should look like:
@@ -42,16 +21,14 @@ your-project/
 │   └── skills/
 │       └── arekos-ui/
 │           ├── SKILL.md
-│           ├── design-system.md
-│           ├── component-patterns.md
-│           └── anti-patterns.md
+│           └── principles.md
 ├── src/
 └── ...
 ```
 
 ## Usage
 
-In Claude Code, invoke the skill with:
+In Claude Code, invoke the skill:
 
 ```
 /arekos-ui build a dashboard for campaign analytics
@@ -62,22 +39,27 @@ In Claude Code, invoke the skill with:
 ```
 
 ```
-/arekos-ui create a modal for confirming deletions
+/arekos-ui create a data table with sorting, filtering, and pagination
 ```
 
-AREKOS handles all UI work — pages, components, layouts, and restyling. It will refuse non-UI tasks (backend, APIs, DevOps).
+AREKOS handles all UI work — pages, components, layouts, and restyling. It reads your existing codebase first (design tokens, component libraries, global styles) and builds within your system, elevating it.
+
+## What It Does Differently
+
+- **Reads your codebase first** — adapts to your existing design system, component library, and patterns instead of forcing its own
+- **Complete output** — no partial snippets or "add your content here" placeholders. Realistic data, all states handled.
+- **States are not optional** — loading, empty, error, hover, focus, disabled. Every interactive element, every data view.
+- **Accessible by default** — semantic HTML, ARIA attributes, keyboard navigation, contrast ratios
+- **No generic AI output** — every component looks like it came from a design studio, not a code generator
 
 ## What's Inside
 
 | File | Purpose |
 |------|---------|
-| `SKILL.md` | Core identity, persona, scope, and output rules |
-| `design-system.md` | Complete token system — colors, spacing, typography, shadows, motion |
-| `component-patterns.md` | Canonical implementations for buttons, cards, inputs, tables, modals, etc. |
-| `anti-patterns.md` | Banned patterns — everything AREKOS will never produce |
+| `SKILL.md` | Core identity, scope, quality standards, and output rules |
+| `principles.md` | 10 design principles covering hierarchy, states, motion, typography, data, forms, and craft |
 
 ## Requirements
 
 - [Claude Code](https://claude.ai/claude-code) CLI or IDE extension
-- A React/Next.js project with Tailwind CSS (the generated code uses Tailwind classes)
-- Geist Sans font (ships with Next.js by default)
+- A frontend project (React, Next.js, or similar with Tailwind CSS)
